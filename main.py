@@ -30,8 +30,9 @@ def main():
     print('\nAll files:\n' +  str(all_files) + '\n')
 
     for file in all_files:
-        with open(file, 'r') as file:
-            all_text += file.read()
+        if '.html' in file or '.css' in file or '.js' in file:
+            with open(file, 'r') as file:
+                all_text += file.read()
 
     print('Unused files:')
     for file in all_files:
