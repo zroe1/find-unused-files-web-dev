@@ -21,6 +21,15 @@ def get_all_paths(current_path , all_files):
     for directory in directories:
         get_all_paths(directory, all_files)
 
+def trim_file_path(file_path: str) -> str:
+    assert file_path[0:2] == './', 'file path must start with "./"'
+    idx = len(file_path) - 1
+
+    while file_path[idx] != '/':
+        idx -= 1
+    
+    return file_path[idx + 1:]
+
 def main():
     current_dir_path = '.'
     all_text = ''
@@ -36,7 +45,9 @@ def main():
 
     print('Unused files:')
     for file in all_files:
-        if not file in all_text:
+        file = trim_file_path(file)
+        print("file", file)
+        if not file[2:] in all_text:
             print(file)
     print()
 
