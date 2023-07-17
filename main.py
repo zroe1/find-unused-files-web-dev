@@ -36,19 +36,27 @@ def main():
     all_files = []
     get_all_paths(current_dir_path, all_files)
 
-    print('\nAll files:\n' +  str(all_files) + '\n')
+    print()
+    print('-'*20 + 'FOUND A TOTAL OF', len(all_files), 'FILES' + '-'*20)
 
     for file in all_files:
         if '.html' in file or '.css' in file or '.js' in file:
             with open(file, 'r') as file:
                 all_text += file.read()
 
-    print('Unused files:')
+    unused_files = []
     for file in all_files:
         file_name = trim_file_path(file)
-        # print(file_name, file)
         if not file_name in all_text:
-            print(file)
+            unused_files.append(file)
+
+    print('\nused files ->', len(all_files) - len(unused_files))
+    print('unused files ->', len(unused_files))
+    print()
+    print('-'*26 + 'UNUSED FILES' + '-'*26)
+    print()
+    for file in unused_files:
+        print(file)
     print()
 
 if __name__ == '__main__':
