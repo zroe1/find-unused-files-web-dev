@@ -60,11 +60,5 @@ def main():
         print(file)
     print()
 
-    #    print("about4copy.html" in all_text)
-    #    test_files = []
-    #    get_all_paths('./sectionpages/sectionpagesimgs', test_files)
-    #    # in_dir = os.listdir('./sectionpages')
-    #    print('./sectionpages/sectionpagesimgsabout4copy.html' in test_files)
-
 if __name__ == '__main__':
     main()
