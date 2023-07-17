@@ -45,8 +45,9 @@ def main():
 
     print('Unused files:')
     for file in all_files:
-        file = trim_file_path(file)
-        if not file[2:] in all_text:
+        file_name = trim_file_path(file)
+        # print(file_name, file)
+        if not file_name in all_text:
             print(file)
     print()
 
