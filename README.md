@@ -13,4 +13,4 @@ Thats all! The output should look something like this:
 ## How it works
 The code searchs recursively through the directories main.py is placed in. If you are currently in a folder with a folder, that also contains several folders, the code will search all of them.
 
-The code only looks for files ending in '.jpg', '.jpeg', '.png', '.html', '.css', '.js', '.pdf', or 'ico'. It only reads and searchs for references to other files if the file ends in '.html', '.css', or '.js'. It also ignores git directories. This is because I designed this program for simple web-development (using only HTML, CSS, and JavaScript), but the code can be manually changed for other purposes.
+The code only looks for files ending in '.jpg', '.jpeg', '.png', '.html', '.css', '.js', '.pdf', or 'ico'. It only reads and searchs for references to other files if the file ends in '.html', '.css', or '.js' and ignores git directories. This is because I designed this program for simple web-development projects (using only HTML, CSS, and JavaScript), but the code can be manually changed for other purposes.
